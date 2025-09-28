@@ -16,6 +16,9 @@ prompt = ChatPromptTemplate.from_messages([
     ("user", "{pergunta}")
 ])
 
+# Define the question
+question = "Explique RAG em 2 frases."
+
 # Create a chain that combines the prompt, LLM, and output parser
 chain = prompt | llm | StrOutputParser()
-print(chain.invoke({"pergunta": "Explique RAG em 2 frases."}))
+print(chain.invoke({"pergunta": question}))
